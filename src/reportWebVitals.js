@@ -9,7 +9,7 @@ const reportWebVitals = (onPerfEntry) => {
         getTTFB(onPerfEntry);
       })
       .catch(() => {
-        console.log('error');
+        console.log('Import of web vitals failed');
       });
   }
 };
