@@ -3,26 +3,42 @@ import randomColor from 'randomcolor';
 import React, { useState } from 'react';
 
 export default function App() {
-  const [color, setColor] = useState(randomColor.randomColor());
-  // const [hue, setHue] = useState(randomColor.hue());
+  const [hue, setHue] = useState('');
+  const [luminosity, setLuminosity] = useState('');
+  const [color, setColor] = useState(randomColor());
+  const colorCreate = randomColor({ hue: hue, luminosity: luminosity });
 
   return (
     <div className="Generator">
-      <button onClick={() => setColor(randomColor.randomColor())}>
-        Generate
-      </button>
+      <button onClick={() => setColor(colorCreate)}>Generate</button>
+
       <br />
       <br />
-      <div style={{ backgroundColor: color, width: '300px', height: '300px' }}>
-        Generated Color: {color}
+      <div
+        style={{
+          backgroundColor: colorCreate,
+          width: '300px',
+        }}
+      >
+        Generated Color: {colorCreate}
       </div>
       <br />
-      {/* <div>
+      <div>
+        add hue:
+        <br />
         <input
           value={hue}
-          onChange={(event) => setHue(event.randomColor.hue())}
+          onChange={(event) => setHue(event.currentTarget.value)}
         />
-      </div> */}
+      </div>
+      <br />
+      <div>
+        add luminosity: <br />
+        <input
+          value={luminosity}
+          onChange={(event) => setLuminosity(event.currentTarget.value)}
+        />
+      </div>
     </div>
   );
 }
