@@ -16,7 +16,7 @@ export default function App() {
       <br />
       <div
         style={{
-          backgroundColor: colorCreate,
+          backgroundColor: color,
           width: '300px',
         }}
       >
