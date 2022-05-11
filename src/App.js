@@ -3,16 +3,15 @@ import randomColor from 'randomcolor';
 import React, { useState } from 'react';
 
 export default function App() {
+  const [color, setColor] = useState(randomColor());
   const [hue, setHue] = useState('');
   const [luminosity, setLuminosity] = useState('');
-  const [color, setColor] = useState(randomColor());
-  const colorCreate = randomColor({ hue: hue, luminosity: luminosity });
 
   return (
     <div
       className="Generator"
       style={{
-        backgroundColor: colorCreate,
+        backgroundColor: color,
         transition: 'all .5s ease',
         width: '100vw',
         height: '100vh',
@@ -26,15 +25,17 @@ export default function App() {
         }}
       >
         <button
-          style={{ backgroundColor: 'white', border: 'none', padding: '10px' }}
-          onClick={() => setColor(colorCreate)}
+          style={{ border: 'none', backgroundColor: 'white', padding: '10px' }}
+          onClick={() =>
+            setColor(randomColor({ hue: hue, luminosity: luminosity }))
+          }
         >
           Generate
         </button>
 
         <br />
         <br />
-        <div>Generated Color: {colorCreate}</div>
+        <div>Generated Color: {color}</div>
         <br />
         <div>
           add hue:
