@@ -9,53 +9,41 @@ export default function App() {
 
   return (
     <div
-      className="Generator"
+      className="DivStyle"
       style={{
         backgroundColor: color,
         transition: 'all .5s ease',
-        width: '100vw',
-        height: '100vh',
-        margin: '0 auto',
       }}
     >
-      <div
-        style={{
-          position: 'relative',
-          top: '35%',
-        }}
+      {' '}
+      <br />
+      <br />
+      <button
+        className="button"
+        onClick={() =>
+          setColor(randomColor({ hue: hue, luminosity: luminosity }))
+        }
       >
-        <button
-          style={{ border: 'none', backgroundColor: 'white', padding: '10px' }}
-          onClick={() =>
-            setColor(randomColor({ hue: hue, luminosity: luminosity }))
-          }
-        >
-          Generate
-        </button>
-
-        <br />
-        <br />
-        <div>Generated Color: {color}</div>
-        <br />
-        <div>
-          add hue:
-          <br />
-          <input
-            style={{ border: 'none' }}
-            value={hue}
-            onChange={(event) => setHue(event.currentTarget.value)}
-          />
-        </div>
-        <br />
-        <div>
-          add luminosity: <br />
-          <input
-            style={{ border: 'none' }}
-            value={luminosity}
-            onChange={(event) => setLuminosity(event.currentTarget.value)}
-          />
-        </div>
-      </div>
+        Generate
+      </button>
+      <br />
+      <br />
+      Generated Color: {color}
+      <br /> <br /> <br />
+      add hue:
+      <br />
+      <input
+        style={{ border: 'none' }}
+        value={hue}
+        onChange={(event) => setHue(event.currentTarget.value)}
+      />
+      <br />
+      add luminosity: <br />
+      <input
+        style={{ border: 'none' }}
+        value={luminosity}
+        onChange={(event) => setLuminosity(event.currentTarget.value)}
+      />
     </div>
   );
 }
