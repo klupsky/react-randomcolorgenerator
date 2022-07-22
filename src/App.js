@@ -16,8 +16,9 @@ export default function App() {
         transition: 'all .5s ease',
       }}
     >
-      {' '}
+      Generated Color: {color}
       <br />
+      <br /> <br />
       <br />
       <button
         className="button"
@@ -29,8 +30,7 @@ export default function App() {
       </button>
       <br />
       <br />
-      <div>Generated Color: {color}</div>
-      <br /> <br /> <br />
+      <br />
       add hue:
       <br />
       <input
