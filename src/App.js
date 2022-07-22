@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <div
+      id="Generated Color: <background color hex code>"
       className="DivStyle"
       style={{
         backgroundColor: color,
@@ -28,9 +29,7 @@ export default function App() {
       </button>
       <br />
       <br />
-      <div id="Generated Color: <background color hex code>">
-        Generated Color: {color}
-      </div>
+      <div>Generated Color: {color}</div>
       <br /> <br /> <br />
       add hue:
       <br />
