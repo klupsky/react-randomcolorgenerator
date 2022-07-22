@@ -28,7 +28,9 @@ export default function App() {
       </button>
       <br />
       <br />
-      Generated Color: {color}
+      <div id="Generated Color: <background color hex code>">
+        Generated Color: {color}
+      </div>
       <br /> <br /> <br />
       add hue:
       <br />
